@@ -1,0 +1,13 @@
+{
+  "name": "mongoose-movies-pi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  },
+  "scripts": {
+    "dev": "nodemon server.js"
+  }
+}
