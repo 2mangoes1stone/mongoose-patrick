@@ -1,0 +1,21 @@
+GET http://localhost:9999/people
+
+
+###
+
+POST http://localhost:9999/people
+Content-Type: application/json
+
+{
+  "firstName": "Christopher",
+  "lastName": "Reeves"
+}
+
+###
+
+DELETE http://localhost:9999/people/594cab2f812075e080a73e85
+
+###
+
+
+

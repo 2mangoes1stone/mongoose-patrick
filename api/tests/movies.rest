@@ -18,3 +18,25 @@ Content-Type: application/json
   "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo aperiam sint, modi eligendi veniam maiores recusandae ad suscipit!                    Temporibus saepe officia laboriosam, ducimus voluptatibus vel placeat dolor ipsum illo quo. Voluptatibus quas mollitia explicabo                     veniam, repellendus quo ducimus magnam dignissimos ut sunt perferendis? Aliquid rem illum tempore! Sunt, minus adipisci.",
   "yearReleased": 2015
 }
+
+
+###
+
+PUT http://localhost:9999/movies/594c5b7c4e18cfba4584586d
+Content-Type: application/json
+
+{
+  "title": "Antman",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo aperiam sint, modi eligendi veniam maiores recusandae ad suscipit!Temporibus saepe officia laboriosam, ducimus voluptatibus vel placeat dolor ipsum illo quo. Voluptatibus quas mollitia explicabo veniam, repellendus quo ducimus magnam dignissimos ut sunt perferendis? Aliquid rem illum tempore! Sunt, minus adipisci.",
+  "yearReleased": 2020,
+  "cast": [{
+    "person": "594caccf789030e16785cb72",
+    "role": "Boo Bah"
+  }]
+}
+
+###
+
+DELETE http://localhost:7000/movies/59489a5b874fda236a23d1ea
+
+
