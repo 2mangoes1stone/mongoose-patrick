@@ -1,20 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MovieList from './components/movieList'
+
+
 
 class App extends Component {
+  state = {
+    movies: null
+  }
   render() {
+    const { movies } = this.state
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      !!movies? ? (
+        <MovieList items={movies} />
+      ) : (
+        'Loading movies'
+      )
       </div>
     );
+  }
+
+
+  // Run after our component first appears on screen
+  componentDidMount() {
+    // Load projects from API
+    fetch('/movies')
+    // Parsing the JSON into into Javascript objects
+    .then(res => res.json())
+    // Update our component's state with the loaded projects
+    .then(json => {
+      // Changing the state will re-render the component
+      this.setState({
+        movies: json
+      })
+    })
   }
 }
 
