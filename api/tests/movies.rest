@@ -1,0 +1,20 @@
+GET http://localhost:9999/movies
+
+###
+
+GET http://localhost:9999/movies/594c4c0370c103b4684b99c8
+
+###
+
+GET http://localhost:9999/movies/DOES_NOT_EXIST
+
+###
+
+POST http://localhost:9999/movies
+Content-Type: application/json
+
+{
+  "title": "Antman",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo aperiam sint, modi eligendi veniam maiores recusandae ad suscipit!                    Temporibus saepe officia laboriosam, ducimus voluptatibus vel placeat dolor ipsum illo quo. Voluptatibus quas mollitia explicabo                     veniam, repellendus quo ducimus magnam dignissimos ut sunt perferendis? Aliquid rem illum tempore! Sunt, minus adipisci.",
+  "yearReleased": 2015
+}

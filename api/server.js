@@ -1,12 +1,18 @@
 const express = require('express')
+const bodyParser = require('body-parser')
+const moviesRouter = require('./routes/movies')
 
+// Create server
 const server = express()
 
-server.get('/test', (req, res) => {
-  res.json({ test: true })
-})
+// MiddleWarre
+server.use(bodyParser.json())
 
-const port = 7000 
+// Add routes
+server.use(moviesRouter)
+
+// Start server
+const port = 9999 
 server.listen(port, () => {
   console.log(`Start on localhost:${port}`)
 })
