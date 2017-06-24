@@ -1,13 +1,17 @@
 import React from 'react'
 
 export default function Movie({
-    name,
-    description
+    title,
+    yearReleased,
+    description,
+    writers,
+    directors,
+    cast
 }) {
     return (
-        <div>
-            <h2>name:{ name }</h2>
-            <h3>description: { description }</h3>
-        </div>
+    <article>
+        <h2>{ title } <small>({ yearReleased })</small></h2>
+        <p>{ description }</p>
+    </article>
     )
 }

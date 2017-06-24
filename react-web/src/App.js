@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import MovieList from './components/movieList'
+import MoviesList from './components/MoviesList'
 
 
 
 class App extends Component {
   state = {
+    error: null,
     movies: null
   }
   render() {
-    const { movies } = this.state
+    const { error, movies } = this.state
     return (
       <div className="App">
-      !!movies? ? (
-        <MovieList items={movies} />
-      ) : (
-        'Loading movies'
-      )
+      { !!error && <p>{ error.message }</p> }
+        {
+          !!movies ? (
+            <MoviesList items={ movies } />
+          ) : (
+            'Loading movies…'
+          )
+        }
       </div>
     );
   }
@@ -24,18 +28,19 @@ class App extends Component {
 
   // Run after our component first appears on screen
   componentDidMount() {
-    // Load projects from API
-    fetch('/movies')
-    // Parsing the JSON into into Javascript objects
-    .then(res => res.json())
-    // Update our component's state with the loaded projects
-    .then(json => {
-      // Changing the state will re-render the component
-      this.setState({
-        movies: json
+    // Load movies from API
+    fetch('movies')
+      // Parsing the JSON into into Javascript objects
+      .then(res => res.json())
+      // Update our component's state with the loaded projects
+      .then(movies => {
+        // Changing the state will re-render the component
+        this.setState({ movies })
       })
-    })
+      .catch(error => {
+        this.setState({ error })
+      })
   }
 }
 
-export default App;
+export default App
