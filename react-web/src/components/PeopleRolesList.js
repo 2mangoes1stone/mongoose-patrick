@@ -1,18 +1,5 @@
 import React from 'react'
-import Movie from './Movie'
-
-function PersonRole({
-    person,
-    role
-}) {
-    return (
-        <div>
-            { person.firstName } { person.lastName }
-            { ' — ' }
-            { role }
-        </div>
-    )
-}
+import PersonRole from './PersonRole'
 
 export default function PeopleRolesList({
     items

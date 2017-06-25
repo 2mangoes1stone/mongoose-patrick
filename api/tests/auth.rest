@@ -12,7 +12,7 @@ POST http://localhost:9999/auth/register
 Content-Type: application/json
 
 {
-  "email": "vig.nat@gmail.com",
+  "email": "vigi.nat@gmail.com",
   "password": "password"
 }
 

@@ -5,23 +5,33 @@ const User = require('../models/user');
 // use static authenticate method of model in LocalStrategy
 passport.use(User.createStrategy());
 
+// Register new user
 function registerMiddleware(req, res, next) {
+  console.log('registerMiddleware', req.body)
   const user = new User({
-    eamil: req.body.email
+    email: req.body.email
   })
   User.register(user, req.body.password, (error, user) => {
     // Error in registration
     if (error) {
-      // Our middlware failed with this error
+      // Our middleware failed with this error
       next(error)
       return
     }
-    // Add newly created user to the request
-    req.user = 
-    // Our middleware succeeded
+    // Add our newly created user to the req
+    req.user = user
+    // Our middleware succeeded with no error
     next()
   })
 }
+
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 module.exports = {
   initialize: passport.initialize(),
