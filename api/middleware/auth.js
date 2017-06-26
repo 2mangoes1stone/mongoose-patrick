@@ -25,16 +25,16 @@ function registerMiddleware(req, res, next) {
   })
 }
 
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
+// passport.serializeUser(function(user, done) {
+//   done(null, user);
+// });
 
-passport.deserializeUser(function(user, done) {
-  done(null, user);
-});
+// passport.deserializeUser(function(user, done) {
+//   done(null, user);
+// });
 
 module.exports = {
   initialize: passport.initialize(),
-  authenticateSignIn: passport.authenticate('local', { session: 'false' }),
+  authenticateSignIn: passport.authenticate('local', { session: false }),
   register: registerMiddleware
 }

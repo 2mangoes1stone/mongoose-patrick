@@ -48,7 +48,7 @@ router.post('/movies', (req,res) => {
 router.put('/movies/:id', (req,res) => {
   const oldMovie = Movie.findById(req.params.id)
   const updatedMovie = req.body
-  oldMovie.update(updatedMovie)
+  oldMovie.update()
     .then(() => {
       res.json(updatedMovie)
     })
