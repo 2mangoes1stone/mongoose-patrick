@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({})
 userSchema.plugin(passportLocalMongoose, {
   usernameField: 'email',
   usernameLowerCase: true, // Emails are case insensitive
-  sessions: false // Using jwt not seesions
+  sessions: false // Using jwt not seesionsL
 });
 
 const User = mongoose.model('User', userSchema)

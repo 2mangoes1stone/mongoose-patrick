@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     const { error, movies } = this.state
     return (
-      <div className="App">
+      <main>
       { !!error && <p>{ error.message }</p> }
         <CreateMovieForm onCreate= { this.handleCreateMovie } />
         {
@@ -45,7 +45,7 @@ class App extends Component {
             'Loading movies…'
           )
         }
-      </div>
+      </main>
     );
   }
 
@@ -53,7 +53,7 @@ class App extends Component {
   // Run after our component first appears on screen
   componentDidMount() {
     // Load movies from API
-    fetch('movies')
+    fetch('/movies')
       // Parsing the JSON into into Javascript objects
       .then(res => res.json())
       // Update our component's state with the loaded projects
